@@ -32,11 +32,10 @@ var fetchChanges = function(pageToken, pageFn, auth, bot) {
 		if (err) {
 			console.error(err);
 		} else {
-			console.log('yo');
 			res.changes.forEach(function(change) {
-				// console.log change pour afficher toutes les infos et savoir quoi recup
 				console.log("Change :", change.file.webViewLink);
-				bot.postMessageToChannel('radio_pc_news', "Change in file :" + change.file.webViewLink);
+				console.log(change.file.lastModifyingUser.displayName);
+				bot.postMessageToChannel('radio_pc_news', "Mother fucking file : " + change.file.webViewLink + " changed by " + change.file.lastModifyingUser.displayName);
 			});
 
 			if (res.newStartPageToken) {

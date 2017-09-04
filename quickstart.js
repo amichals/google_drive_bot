@@ -33,7 +33,7 @@ fs.readFile('client_secret.json', function processClientSecrets(err, content) {
 				callFetchChanges(auth, token)
 				setTimeout(function () {
 					callFetchChanges(auth, token)
-					setTimeout(process.exit, 60000);
+					setTimeout(process.exit, 40000);
 				}, 30000);
 			});	
 		});
